@@ -23,6 +23,15 @@ namespace Gw2
         public MainWindow()
         {
             InitializeComponent();
+            SetUpConnection.SetUp();
+            test();
+        }
+
+        public async void test()
+        {
+            await LoadCharacters.GetAllCharactersAsync();
+            //MessageBox.Show($"List has: {x.Character.Count}");
+            
         }
     }
 }
