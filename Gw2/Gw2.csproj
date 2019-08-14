@@ -76,6 +76,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Character.cs" />
+    <Compile Include="Items.cs" />
     <Compile Include="LoadCharacters.cs" />
     <Compile Include="SetUpConnection.cs" />
     <Page Include="MainWindow.xaml">

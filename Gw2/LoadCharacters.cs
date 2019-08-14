@@ -10,6 +10,7 @@ namespace Gw2
 {
     public static class LoadCharacters
     {
+        public static List<Character> charactersList = new List<Character>();
         public static async Task GetAllCharactersAsync()
         {
             string action = "characters?ids=all";
@@ -19,10 +20,8 @@ namespace Gw2
 
             string rawJSON = await SetUpConnection.httpClient.GetStringAsync(url);
 
-            //CharactersList characters = JsonConvert.DeserializeObject<CharactersList>(rawJSON.Substring(1, rawJSON.Length-1));
-            //Console.WriteLine(characters.Character.Count);
-            var characterList = JsonConvert.DeserializeObject<List<Character>>(rawJSON);
-            var myObj = characterList[0];
+            charactersList = JsonConvert.DeserializeObject<List<Character>>(rawJSON);
+            var myObj = charactersList[0];
 
 
 

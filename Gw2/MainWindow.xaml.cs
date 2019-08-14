@@ -30,7 +30,7 @@ namespace Gw2
         public async void test()
         {
             await LoadCharacters.GetAllCharactersAsync();
-            //MessageBox.Show($"List has: {x.Character.Count}");
+            MessageBox.Show($"List has: {LoadCharacters.charactersList.Count}");
             
         }
     }
