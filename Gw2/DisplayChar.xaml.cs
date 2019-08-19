@@ -19,18 +19,15 @@ namespace Gw2
     /// </summary>
     public partial class DisplayChar : Window
     {
-        public List<Character> charactersList = new List<Character>();
-        public DisplayChar(List<Character> characters)
+        public DisplayChar()
         {
             InitializeComponent();
-            this.charactersList = characters; 
             test();
         }
 
         public void test()
         {
-            //MessageBox.Show($"List has: {LoadCharacters.charactersList.Count}");
-            Count.Text = "Chars: " + charactersList.Count.ToString();
+            Count.Text = "Chars: " + LoadCharacters.charactersList.Count.ToString();
         }
     }
 }

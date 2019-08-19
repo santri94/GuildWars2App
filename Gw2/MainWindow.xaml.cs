@@ -30,7 +30,7 @@ namespace Gw2
         public async void test()
         {
             await LoadCharacters.GetAllCharactersAsync();
-            DisplayChar secondWindow = new DisplayChar(LoadCharacters.charactersList);
+            DisplayChar secondWindow = new DisplayChar();
             secondWindow.Show();
             this.Close();
             
