@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Gw2"
         mc:Ignorable="d"
         Title="Guild Wars 2" Height="200" Width="600" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -16,6 +19,7 @@
             <RowDefinition Height="80" />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
+        <Image Grid.Column="1" Grid.RowSpan="3" Source="C:\Gw2 Api\Gw2\Images\Logo.jpg" Margin="388,55,0,30"/>
         <TextBlock x:Name="Loading" Grid.Row="1" Grid.Column="1" FontSize="40" Foreground="OrangeRed" FontWeight="Bold" HorizontalAlignment="Center" Margin="177,15,181,65" Grid.RowSpan="2" Width="222" >Loading ...</TextBlock>
         <ComboBox x:Name="CharactersComboBox" FontSize="30" HorizontalContentAlignment="Center" Foreground="OrangeRed" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Width="300" Height="50" Visibility="Hidden"/>
         <Button x:Name="ShowCharacter" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Width="80" Height="40" FontSize="20" Click="Button_Click" Visibility="Hidden">Submit</Button>
