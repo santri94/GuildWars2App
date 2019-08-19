@@ -32,6 +32,16 @@ namespace Gw2
             Name.Text = selected.name;
             RaceProfession.Text = $"{selected.race} - {selected.profession}";
             CharImage.Source = new BitmapImage(new Uri(GetImage()));
+            Backpack.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Backpack.png"));
+            Helm.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Helm.png"));
+            Boots.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Boots.png"));
+            Gloves.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Gloves.png"));
+            Ring1.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Ring.png"));
+            Ring2.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Ring.png"));
+            Amulet.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Amulet.png"));
+            WeaponA1.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Weapon.png"));
+            WeaponA2.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Weapon.png"));
+
         }
 
         public string GetImage()
