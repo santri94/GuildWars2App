@@ -19,15 +19,17 @@ namespace Gw2
     /// </summary>
     public partial class DisplayChar : Window
     {
-        public DisplayChar()
+        Character selected = new Character();
+        public DisplayChar(Character selected)
         {
             InitializeComponent();
+            this.selected = selected;
             test();
         }
 
         public void test()
         {
-            Count.Text = "Chars: " + LoadCharacters.charactersList.Count.ToString();
+            Name.Text = selected.name;
         }
     }
 }

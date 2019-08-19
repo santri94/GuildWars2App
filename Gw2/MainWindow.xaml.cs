@@ -30,10 +30,30 @@ namespace Gw2
         public async void test()
         {
             await LoadCharacters.GetAllCharactersAsync();
-            DisplayChar secondWindow = new DisplayChar();
-            secondWindow.Show();
-            this.Close();
+            foreach (var item in LoadCharacters.charactersList)
+            {
+                CharactersComboBox.Items.Add(item.name);
+            }
+            Loading.Visibility = Visibility.Hidden;
+            CharactersComboBox.Visibility = Visibility.Visible;
+            ShowCharacter.Visibility = Visibility.Visible;
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (CharactersComboBox.Text == "")
+            {
+                // dont do anything
+            }
+            else
+            {
+                Character selected = new Character();
+                selected = LoadCharacters.charactersList.Where(x => x.name == CharactersComboBox.Text).ToList()[0];
+                DisplayChar displayCharacter = new DisplayChar(selected);
+                displayCharacter.Show();
+                this.Close();
+            }
         }
     }
 }
