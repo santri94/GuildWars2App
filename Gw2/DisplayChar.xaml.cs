@@ -10,30 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Gw2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DisplayChar.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DisplayChar : Window
     {
-        public MainWindow()
+        public List<Character> charactersList = new List<Character>();
+        public DisplayChar(List<Character> characters)
         {
             InitializeComponent();
-            SetUpConnection.SetUp();
+            this.charactersList = characters; 
             test();
         }
 
-        public async void test()
+        public void test()
         {
-            await LoadCharacters.GetAllCharactersAsync();
-            DisplayChar secondWindow = new DisplayChar(LoadCharacters.charactersList);
-            secondWindow.Show();
-            this.Close();
-            
+            //MessageBox.Show($"List has: {LoadCharacters.charactersList.Count}");
+            Count.Text = "Chars: " + charactersList.Count.ToString();
         }
     }
 }

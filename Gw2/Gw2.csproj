@@ -76,9 +76,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Character.cs" />
+    <Compile Include="DisplayChar.xaml.cs">
+      <DependentUpon>DisplayChar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="LoadCharacters.cs" />
     <Compile Include="SetUpConnection.cs" />
+    <Page Include="DisplayChar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
