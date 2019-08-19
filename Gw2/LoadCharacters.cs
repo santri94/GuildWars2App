@@ -21,7 +21,7 @@ namespace Gw2
             string rawJSON = await SetUpConnection.httpClient.GetStringAsync(url);
 
             charactersList = JsonConvert.DeserializeObject<List<Character>>(rawJSON);
-            var myObj = charactersList[0];
+            //var myObj = charactersList[0];
 
 
 
