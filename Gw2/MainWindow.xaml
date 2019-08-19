@@ -17,7 +17,7 @@
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
         <TextBlock x:Name="Loading" Grid.Row="1" Grid.Column="1" FontSize="40" Foreground="OrangeRed" FontWeight="Bold" HorizontalAlignment="Center" Margin="177,15,181,65" Grid.RowSpan="2" Width="222" >Loading ...</TextBlock>
-        <ComboBox x:Name="CharactersComboBox" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Width="300" Height="50" Visibility="Hidden"/>
+        <ComboBox x:Name="CharactersComboBox" FontSize="30" HorizontalContentAlignment="Center" Foreground="OrangeRed" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Width="300" Height="50" Visibility="Hidden"/>
         <Button x:Name="ShowCharacter" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Width="80" Height="40" FontSize="20" Click="Button_Click" Visibility="Hidden">Submit</Button>
     </Grid>
 </Window>
