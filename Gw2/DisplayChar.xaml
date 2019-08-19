@@ -9,11 +9,24 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="580" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        <TextBlock x:Name="Name" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" FontSize="25"></TextBlock>
+        <TextBlock x:Name="Name" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25"></TextBlock>
+        <TextBlock x:Name="RaceProfession" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="17"></TextBlock>
+        <Image x:Name="CharImage" Grid.Row="3" Grid.RowSpan="4" Grid.Column="2"></Image>
     </Grid>
 </Window>

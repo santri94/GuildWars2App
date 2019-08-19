@@ -24,12 +24,40 @@ namespace Gw2
         {
             InitializeComponent();
             this.selected = selected;
-            test();
+            DisplayInfo();
         }
 
-        public void test()
+        public void DisplayInfo()
         {
             Name.Text = selected.name;
+            RaceProfession.Text = $"{selected.race} - {selected.profession}";
+            CharImage.Source = new BitmapImage(new Uri(GetImage()));
+        }
+
+        public string GetImage()
+        {
+            string image = "";
+            if (selected.race == "Asura")
+            {
+                image = "C:\\Gw2 Api\\Gw2\\Images\\Asura.jpg";
+            }
+            if (selected.race == "Charr")
+            {
+                image = "C:\\Gw2 Api\\Gw2\\Images\\Charr.jpg";
+            }
+            if (selected.race == "Human")
+            {
+                image = "C:\\Gw2 Api\\Gw2\\Images\\Human.jpg";
+            }
+            if (selected.race == "Norn")
+            {
+                image = "C:\\Gw2 Api\\Gw2\\Images\\Norn.jpg";
+            }
+            if (selected.race == "Sylvari")
+            {
+                image = "C:\\Gw2 Api\\Gw2\\Images\\Sylvari.jpg";
+            }
+            return image;
         }
     }
 }
