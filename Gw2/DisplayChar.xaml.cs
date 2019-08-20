@@ -26,7 +26,6 @@ namespace Gw2
             InitializeComponent();
             this.selected = selected;
             LoadItemsPics();
-            DisplayInfo();
         }
 
         private async void LoadItemsPics()
@@ -36,6 +35,7 @@ namespace Gw2
                 //await LoadItemsImages.GetAllItemsImages(item.id);
                 item.icon = await LoadItemsImages.GetAllItemsImages(item.id);
             }
+            DisplayInfo();
         }
 
         public void DisplayInfo()
@@ -43,16 +43,113 @@ namespace Gw2
             Name.Text = selected.name;
             RaceProfession.Text = $"{selected.race} - {selected.profession}";
             CharImage.Source = new BitmapImage(new Uri(GetImage()));
+            //----------------------------------------------------------------------------------------------------------
+            //                                          Getting Images or setting defaults
+            //----------------------------------------------------------------------------------------------------------
+            foreach (var item in selected.equipment)
+            {
+                if (item.slot == "Backpack")
+                {
 
-            Backpack.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Backpack.png"));
-            Helm.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Helm.png"));
-            Boots.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Boots.png"));
-            Gloves.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Gloves.png"));
-            Ring1.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Ring.png"));
-            Ring2.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Ring.png"));
-            Amulet.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Amulet.png"));
-            WeaponA1.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Weapon.png"));
-            WeaponA2.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Weapon.png"));
+                    Backpack.Source = new BitmapImage(new Uri(item.icon));
+                    Backpack.Opacity = 1.0;
+
+                }
+                if (item.slot == "Helm")
+                {
+                    Helm.Source = new BitmapImage(new Uri(item.icon));
+                    Helm.Opacity = 1.0;
+
+                }
+                if (item.slot == "Boots")
+                {
+                    Boots.Source = new BitmapImage(new Uri(item.icon));
+                    Boots.Opacity = 1.0;
+
+                }
+                if (item.slot == "Gloves")
+                {
+                    Gloves.Source = new BitmapImage(new Uri(item.icon));
+                    Gloves.Opacity = 1.0;
+
+                }
+                if (item.slot == "Ring1")
+                {
+                    Ring1.Source = new BitmapImage(new Uri(item.icon));
+                    Ring1.Opacity = 1.0;
+
+                }
+                if (item.slot == "Ring2")
+                {
+                    Ring2.Source = new BitmapImage(new Uri(item.icon));
+                    Ring2.Opacity = 1.0;
+
+                }
+                if (item.slot == "Amulet")
+                {
+                    Amulet.Source = new BitmapImage(new Uri(item.icon));
+                    Amulet.Opacity = 1.0;
+
+                }
+                if (item.slot == "WeaponA1")
+                {
+                    WeaponA1.Source = new BitmapImage(new Uri(item.icon));
+                    WeaponA1.Opacity = 1.0;
+
+                }
+                if (item.slot == "WeaponA2")
+                {
+                    WeaponA2.Source = new BitmapImage(new Uri(item.icon));
+                    WeaponA2.Opacity = 1.0;
+
+                }
+
+            }
+            //----------------------------------------------------------------------------------------------------------
+            if (Backpack.Source == null)
+            {
+                Backpack.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Backpack.png"));
+
+            }
+            if (Helm.Source == null)
+            {
+                Helm.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Helm.png"));
+
+            }
+            if (Boots.Source == null)
+            {
+                Boots.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Boots.png"));
+            }
+            if (Gloves.Source == null)
+            {
+                Gloves.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Gloves.png"));
+
+            }
+            if (Ring1.Source == null)
+            {
+                Ring1.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Ring.png"));
+
+            }
+            if (Ring2.Source == null)
+            {
+                Ring2.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Ring.png"));
+
+            }
+            if (Amulet.Source == null)
+            {
+                Amulet.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Amulet.png"));
+
+            }
+            if (WeaponA1.Source == null)
+            {
+                WeaponA1.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Weapon.png"));
+
+            }
+            if (WeaponA2.Source == null)
+            {
+                WeaponA2.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Weapon.png"));
+
+            }
 
         }
 
