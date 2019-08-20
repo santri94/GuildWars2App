@@ -31,7 +31,7 @@ namespace Gw2
         {
             Name.Text = selected.name;
             RaceProfession.Text = $"{selected.race} - {selected.profession}";
-            CharImage.Source = new BitmapImage(new Uri(GetImage()))
+            CharImage.Source = new BitmapImage(new Uri(GetImage()));
             Backpack.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Backpack.png"));
             Helm.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Helm.png"));
             Boots.Source = new BitmapImage(new Uri("C:\\Gw2 Api\\Gw2\\Images\\Items\\Boots.png"));
