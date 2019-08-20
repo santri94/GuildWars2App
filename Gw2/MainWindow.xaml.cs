@@ -26,27 +26,15 @@ namespace Gw2
             InitializeComponent();
             SetLogo();
             SetUpConnection.SetUp();
-            test();
         }
 
         private void SetLogo()
         {
             var path = Directory.GetCurrentDirectory()+ "\\Images\\Logo.jpg";
             Logo.Source = new BitmapImage(new Uri(path));
+            Logo.Visibility = Visibility.Hidden;
         }
 
-        public async void test()
-        {
-            await LoadCharacters.GetAllCharactersAsync();
-            foreach (var item in LoadCharacters.charactersList)
-            {
-                CharactersComboBox.Items.Add(item.name);
-            }
-            Loading.Visibility = Visibility.Hidden;
-            CharactersComboBox.Visibility = Visibility.Visible;
-            ShowCharacter.Visibility = Visibility.Visible;
-            
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -61,6 +49,40 @@ namespace Gw2
                 DisplayChar displayCharacter = new DisplayChar(selected);
                 displayCharacter.Show();
                 this.Close();
+            }
+        }
+
+        private async void EnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Token.Text == "")
+            {
+                InvalidToken.Visibility = Visibility.Hidden;
+                EnterToken.Visibility = Visibility.Visible;
+            }
+            else if (Token.Text.Length < 60 && Token.Text != "")
+            {
+                // small security
+                EnterToken.Visibility = Visibility.Hidden;
+                InvalidToken.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                TokenText.Visibility = Visibility.Hidden;
+                Token.Visibility = Visibility.Hidden;
+                EnterButton.Visibility = Visibility.Hidden;
+                EnterToken.Visibility = Visibility.Hidden;
+                InvalidToken.Visibility = Visibility.Hidden;
+                Loading.Visibility = Visibility.Visible;
+                Logo.Visibility = Visibility.Visible;
+                await LoadCharacters.GetAllCharactersAsync(Token.Text);
+                foreach (var item in LoadCharacters.charactersList)
+                {
+                    CharactersComboBox.Items.Add(item.name);
+                }
+                Loading.Visibility = Visibility.Hidden;
+                CharactersComboBox.Visibility = Visibility.Visible;
+                ShowCharacter.Visibility = Visibility.Visible;
+
             }
         }
     }
