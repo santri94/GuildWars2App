@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="LoadCharacters.cs" />
+    <Compile Include="LoadItemsImages.cs" />
     <Compile Include="SetUpConnection.cs" />
     <Page Include="DisplayChar.xaml">
       <SubType>Designer</SubType>
