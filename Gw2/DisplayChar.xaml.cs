@@ -25,7 +25,17 @@ namespace Gw2
         {
             InitializeComponent();
             this.selected = selected;
+            LoadItemsPics();
             DisplayInfo();
+        }
+
+        private async void LoadItemsPics()
+        {
+            foreach (var item in selected.equipment)
+            {
+                //await LoadItemsImages.GetAllItemsImages(item.id);
+                item.icon = await LoadItemsImages.GetAllItemsImages(item.id);
+            }
         }
 
         public void DisplayInfo()
