@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,15 @@ namespace Gw2
         public MainWindow()
         {
             InitializeComponent();
+            SetLogo();
             SetUpConnection.SetUp();
             test();
+        }
+
+        private void SetLogo()
+        {
+            var path = Directory.GetCurrentDirectory()+ "\\Images\\Logo.jpg";
+            Logo.Source = new BitmapImage(new Uri(path));
         }
 
         public async void test()
