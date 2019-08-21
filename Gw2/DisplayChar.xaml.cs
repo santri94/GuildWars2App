@@ -36,7 +36,16 @@ namespace Gw2
                 item.icon = await LoadItemsImages.GetAllItemsImages(item.id);
             }
             DisplayInfo();
+            //HooverFunc();
         }
+
+        private void Helm_MouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+            Item helm = new Item();
+            helm.Show();
+
+        }
+
 
         public void DisplayInfo()
         {
@@ -155,11 +164,8 @@ namespace Gw2
 
             }
 
-            if (Helm.IsMouseOver)
-            {
-                Item helm = new Item();
-                helm.Show();
-            }
+            Helm.MouseLeftButtonDown += Helm_MouseLeftButtonDown;
+
 
         }
 

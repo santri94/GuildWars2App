@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gw2"
         mc:Ignorable="d"
-        Title="Item" Height="300" Width="300" AllowsTransparency="True" WindowStyle="None">
+        Title="Item" Height="300" Width="300" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="#FF767575">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" FontSize="50" VerticalAlignment="Center">Item</TextBlock>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="20" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Width="250" Height="200" BorderBrush="White" BorderThickness="2" CornerRadius="10" HorizontalAlignment="Center" ></Border>
+
+        <TextBlock Foreground="White" HorizontalAlignment="Center" Grid.Column="2" FontSize="40" Grid.Row="0" VerticalAlignment="Center">Item</TextBlock>
+        <Button Content="Close" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Click="Button_Click" Height="28"/>
+
     </Grid>
 </Window>
