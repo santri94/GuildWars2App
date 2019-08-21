@@ -104,6 +104,10 @@ namespace Gw2
 
                 }
 
+
+
+
+
             }
             //----------------------------------------------------------------------------------------------------------
             if (Backpack.Source == null)
@@ -149,6 +153,12 @@ namespace Gw2
             {
                 WeaponA2.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "\\Images\\Items\\Weapon.png"));
 
+            }
+
+            if (Helm.IsMouseOver)
+            {
+                Item helm = new Item();
+                helm.Show();
             }
 
         }

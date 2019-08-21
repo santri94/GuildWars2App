@@ -79,11 +79,18 @@
     <Compile Include="DisplayChar.xaml.cs">
       <DependentUpon>DisplayChar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Item.xaml.cs">
+      <DependentUpon>Item.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="LoadCharacters.cs" />
     <Compile Include="LoadItemsImages.cs" />
     <Compile Include="SetUpConnection.cs" />
     <Page Include="DisplayChar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Item.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
