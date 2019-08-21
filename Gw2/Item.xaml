@@ -26,8 +26,10 @@
 
         <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3" Width="250" Height="200" BorderBrush="White" BorderThickness="2" CornerRadius="10" HorizontalAlignment="Center" ></Border>
 
-        <TextBlock Foreground="White" HorizontalAlignment="Center" Grid.Column="2" FontSize="40" Grid.Row="0" VerticalAlignment="Center">Item</TextBlock>
+        <TextBlock x:Name="ItemSelectedName" Foreground="White" HorizontalAlignment="Center" Grid.Column="2" FontSize="40" Grid.Row="0" VerticalAlignment="Center">Item</TextBlock>
         <Button Content="Close" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Click="Button_Click" Height="28"/>
+
+        <Image x:Name="ItemSelectedImage" Width="80" Height="80" Grid.Row="3" Grid.RowSpan="2" Grid.Column="2"></Image>
 
     </Grid>
 </Window>

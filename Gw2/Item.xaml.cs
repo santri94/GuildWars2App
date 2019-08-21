@@ -19,9 +19,18 @@ namespace Gw2
     /// </summary>
     public partial class Item : Window
     {
-        public Item()
+        Items selectedItem = new Items();
+        public Item(Items selected)
         {
             InitializeComponent();
+            this.selectedItem = selected;
+            LoadInfo();
+        }
+
+        private void LoadInfo()
+        {
+            ItemSelectedName.Text = selectedItem.name;
+            ItemSelectedImage.Source = new BitmapImage(new Uri(selectedItem.icon));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

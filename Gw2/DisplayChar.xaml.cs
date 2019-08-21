@@ -41,7 +41,15 @@ namespace Gw2
 
         private void Helm_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-            Item helm = new Item();
+            //Team team = new Team();
+            //team = teams.Teams.Where(x => x.idTeam == chooseTeam).ToList()[0];
+            //var x = teams.Teams.Single(t => t.idTeam == chooseTeam);
+            //Items selected = 
+
+            //Getting Exactly the item that was clicked
+            var x = selected.equipment.Single(t => t.slot == "Helm");
+
+            Item helm = new Item(x);
             helm.Show();
 
         }
