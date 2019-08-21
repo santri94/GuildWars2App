@@ -33,7 +33,10 @@ namespace Gw2
             foreach (var item in selected.equipment)
             {
                 //await LoadItemsImages.GetAllItemsImages(item.id);
-                item.icon = await LoadItemsImages.GetAllItemsImages(item.id);
+                var x = await LoadItemsImages.GetAllItemsImages(item.id);
+                item.icon = x.icon;
+                item.name = x.name;
+                item.level = x.level;
             }
             DisplayInfo();
             //HooverFunc();
